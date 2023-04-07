@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a49e22b662.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+             <div class="input-group">
+                <div class="input-field" id="name">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text" placeholder="Password">
+                </div>
+                <p>Lost password?&nbsp;<a href="#"> Click here!</a></p>
+             </div>
+             <div class="btn-field">
+                <button type="button" id="signUp">Sign Up</button>
+                <button type="button" id="signIn" class="disable">Sign In</button>
+             </div>
+             
+            </form>
+        </div>
+    </div>
+    <script>
+        let signup = document.getElementById("signUp");
+        let signin = document.getElementById("signIn");
+        let title = document.getElementById("title");
+        let name = document.getElementById("name");
+
+        //sign up 누르면 signin 색깔과 title 과 name 이 바뀜;
+        
+        signin.onclick = function (){
+            title.innerHTML = "Sign In";
+            name.style.maxHeight = "0";
+            signin.classList.remove("disable");
+            signup.classList.add("disable");
+        }
+
+        signup.onclick = function (){
+            title.innerHTML = "Sign Up";
+            name.style.maxHeight = "65px";
+            signup.classList.remove("disable");
+            signin.classList.add("disable");
+        }
+        
+
+    </script>
+</body>
+</html>
